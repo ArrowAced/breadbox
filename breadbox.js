@@ -12,6 +12,17 @@ class breadbox {
 			"blockIconURI": this.icon,
 			"menuIconURI": this.menuicon,
             "blocks": [
+                {
+                    "opcode": "fetchFromURL",
+                    "blockType": "reporter",
+                    "text": "fetch data from [URL]",
+                    "arguments": {
+                        "URL": {
+                            "type": "string",
+                            "defaultValue": "https://api.github.com/status"
+                        },
+                    },
+                },
 				{
                     "opcode": "startsWith",
                     "blockType": "Boolean",
@@ -26,13 +37,40 @@ class breadbox {
                             "defaultValue": "foo",
                         },
                     },
+                },
+                {
+                    "opcode": "endsWith",
+                    "blockType": "Boolean",
+                    "text": "[VAL1] ends with [VAL2]?",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                        "VAL2": {
+                            "type": "string",
+                            "defaultValue": "bar",
+                        },
+                    },
                 }
 			]
         };
     };
 
+    fetchFromURL({URL}) {
+        return fetch(URL).then(response => response.text());
+    };
+
     startsWith({VAL1, VAL2}) {
         if (VAL1.startsWith(VAL2)) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    endsWith({VAL1, VAL2}) {
+        if (VAL1.endsWith(VAL2)) {
             return true;
         } else {
             return false;
