@@ -87,6 +87,21 @@ class breadbox {
                         },
                     },
                 },
+                {
+                    "opcode": "lastLettersOf",
+                    "blockType": "reporter",
+                    "text": "last [VAL1] letters of [VAL2]",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "number",
+                            "defaultValue": "3",
+                        },
+                        "VAL2": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                    },
+                },
 			],
         };
     };
@@ -117,6 +132,10 @@ class breadbox {
 
     firstLettersOf({VAL1, VAL2}) {
         return VAL2.substring(0, VAL1);
+    };
+
+    lastLettersOf({VAL1, VAL2}) {
+        return VAL2.substring(VAL2.length - VAL1);
     };
 };
 
