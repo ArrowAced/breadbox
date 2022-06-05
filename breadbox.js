@@ -102,6 +102,25 @@ class breadbox {
                         },
                     },
                 },
+                {
+                    "opcode": "lettersToOf",
+                    "blockType": "reporter",
+                    "text": "letters [VAL1] to [VAL2] of [VAL3]",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "number",
+                            "defaultValue": "1",
+                        },
+                        "VAL2": {
+                            "type": "number",
+                            "defaultValue": "3",
+                        },
+                        "VAL3": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                     },
+                },
 			],
         };
     };
@@ -136,6 +155,10 @@ class breadbox {
 
     lastLettersOf({VAL1, VAL2}) {
         return VAL2.substring(VAL2.length - VAL1);
+    };
+
+    lettersToOf({VAL1, VAL2, VAL3}) {
+        return VAL3.substring(VAL1 - 1, VAL2);
     };
 };
 
