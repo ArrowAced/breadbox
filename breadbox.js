@@ -52,7 +52,26 @@ class breadbox {
                             "defaultValue": "bar",
                         },
                     },
-                }
+                },
+                {
+                    "opcode": "replaceWith",
+                    "blockType": "reporter",
+                    "text": "replace [VAL1] with [VAL2] in [VAL3]",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "string",
+                            "defaultValue": "foo",
+                        },
+                        "VAL2": {
+                            "type": "string",
+                            "defaultValue": "bar",
+                        },
+                        "VAL3": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                    }
+                },
 			]
         };
     };
@@ -75,6 +94,10 @@ class breadbox {
         } else {
             return false;
         }
+    };
+
+    replaceWith({VAL1, VAL2, VAL3}) {
+        return VAL3.replace(VAL1, VAL2);
     };
 };
 
