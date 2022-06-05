@@ -121,6 +121,21 @@ class breadbox {
                         },
                      },
                 },
+                {
+                    "opcode": "occurencesOf",
+                    "blockType": "reporter",
+                    "text": "occurences of [VAL1] in [VAL2]",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "string",
+                            "defaultValue": "foo",
+                        },
+                        "VAL2": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                    },
+                }
 			],
         };
     };
@@ -159,6 +174,10 @@ class breadbox {
 
     lettersToOf({VAL1, VAL2, VAL3}) {
         return VAL3.substring(VAL1 - 1, VAL2);
+    };
+
+    occurencesOf({VAL1, VAL2}) {
+        return VAL2.split(VAL1).length - 1;
     };
 };
 
