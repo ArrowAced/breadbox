@@ -155,6 +155,21 @@ class breadbox {
                         },
                     },
                 },
+                {
+                    "opcode": "everythingAfterLocationIn",
+                    "blockType": "reporter",
+                    "text": "everything after location [VAL1] in [VAL2]",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "number",
+                            "defaultValue": "4",
+                        },
+                        "VAL2": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                    },
+                }
 			],
         };
     };
@@ -201,6 +216,10 @@ class breadbox {
 
     locationOfIn({VAL1, VAL2, VAL3}) {
         return VAL3.indexOf(VAL2, VAL1 - 1) + 1;
+    }
+
+    everythingAfterLocationIn({VAL1, VAL2}) {
+        return VAL2.substring(VAL1 - 1);
     }
 };
 
