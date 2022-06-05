@@ -70,9 +70,24 @@ class breadbox {
                             "type": "string",
                             "defaultValue": "foobar",
                         },
-                    }
+                    },
                 },
-			]
+                {
+                    "opcode": "firstLettersOf",
+                    "blockType": "reporter",
+                    "text": "first [VAL1] letters of [VAL2]",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "number",
+                            "defaultValue": "3",
+                        },
+                        "VAL2": {
+                            "type": "string",
+                            "defaultValue": "foobar",
+                        },
+                    },
+                },
+			],
         };
     };
 
@@ -98,6 +113,10 @@ class breadbox {
 
     replaceWith({VAL1, VAL2, VAL3}) {
         return VAL3.replace(VAL1, VAL2);
+    };
+
+    firstLettersOf({VAL1, VAL2}) {
+        return VAL2.substring(0, VAL1);
     };
 };
 
