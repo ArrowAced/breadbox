@@ -169,7 +169,7 @@ class breadbox {
                             "defaultValue": "foobar",
                         },
                     },
-                }
+                },
 			],
         };
     };
@@ -216,11 +216,11 @@ class breadbox {
 
     locationOfIn({VAL1, VAL2, VAL3}) {
         return VAL3.indexOf(VAL2, VAL1 - 1) + 1;
-    }
+    };
 
     everythingAfterLocationIn({VAL1, VAL2}) {
         return VAL2.substring(VAL1 - 1);
-    }
+    };
 };
 
 (function() {
