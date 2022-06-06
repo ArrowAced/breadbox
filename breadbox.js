@@ -175,7 +175,7 @@ class breadbox {
     };
 
     fetchFromURL({URL}) {
-        return fetch(URL).then(response => response.text());
+        return fetch(URL).then(response => response.text()).catch(err => '');
     };
 
     startsWith({VAL1, VAL2}) {
