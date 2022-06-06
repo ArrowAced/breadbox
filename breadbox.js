@@ -23,6 +23,16 @@ class breadbox {
                         },
                     },
                 },
+                {
+                    "opcode": "epochTime",
+                    "blockType": "reporter",
+                    "text": "epoch time",
+                },
+                {
+                    "opcode": "epochMilliseconds",
+                    "blockType": "reporter",
+                    "text": "epoch milliseconds",
+                },
 				{
                     "opcode": "startsWith",
                     "blockType": "Boolean",
@@ -176,6 +186,14 @@ class breadbox {
 
     fetchFromURL({URL}) {
         return fetch(URL).then(response => response.text()).catch(err => '');
+    };
+
+    epochTime() {
+        return Math.floor(Date.now() / 1000);
+    };
+
+    epochMilliseconds() {
+        return Date.now();
     };
 
     startsWith({VAL1, VAL2}) {
