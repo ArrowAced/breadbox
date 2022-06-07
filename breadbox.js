@@ -180,6 +180,17 @@ class breadbox {
                         },
                     },
                 },
+                {
+                    "opcode": "convertToLowercase",
+                    "blockType": "reporter",
+                    "text": "convert [VAL1] to lowercase",
+                    "arguments": {
+                        "VAL1": {
+                            "type": "string",
+                            "defaultValue": "FOOBAR",
+                        },
+                    },
+                },
 			],
         };
     };
@@ -238,6 +249,10 @@ class breadbox {
 
     everythingAfterLocationIn({VAL1, VAL2}) {
         return VAL2.substring(VAL1 - 1);
+    };
+
+    convertToLowercase({VAL1}) {
+        return VAL1.toLowerCase();
     };
 };
 
