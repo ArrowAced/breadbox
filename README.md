@@ -1,5 +1,5 @@
 > **Warning**
 >
-> Breadbox is no longer updated. It's functionality will not be expanded on. It doesn't follow new extension recomendations. Use at your own risk.
+> Breadbox is no longer updated. Its functionality will not be expanded on. It doesn't follow new extension recomendations. Please do not use this extension.
 > 
-> It's recommended to use extensions from the Turbowarp Extension Gallery such as Text, Time, and Fetch which can do everything Breadbox could and more.
+> It is recommended to use extensions from the Turbowarp Extension Gallery such as Text, Time, and Fetch which can do everything Breadbox could and more.
